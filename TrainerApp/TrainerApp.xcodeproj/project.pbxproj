@@ -14,13 +14,21 @@
 		BF5DE7971994DFF500FDBF2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7961994DFF500FDBF2C /* main.m */; };
 		BF5DE79B1994DFF500FDBF2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE79A1994DFF500FDBF2C /* AppDelegate.m */; };
 		BF5DE79E1994DFF500FDBF2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5DE79C1994DFF500FDBF2C /* Main.storyboard */; };
-		BF5DE7A11994DFF500FDBF2C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7A01994DFF500FDBF2C /* ViewController.m */; };
 		BF5DE7A31994DFF500FDBF2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5DE7A21994DFF500FDBF2C /* Images.xcassets */; };
 		BF5DE7AA1994DFF500FDBF2C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DE7A91994DFF500FDBF2C /* XCTest.framework */; };
 		BF5DE7AB1994DFF500FDBF2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DE78A1994DFF500FDBF2C /* Foundation.framework */; };
 		BF5DE7AC1994DFF500FDBF2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DE78E1994DFF500FDBF2C /* UIKit.framework */; };
 		BF5DE7B41994DFF500FDBF2C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF5DE7B21994DFF500FDBF2C /* InfoPlist.strings */; };
 		BF5DE7B61994DFF500FDBF2C /* TrainerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7B51994DFF500FDBF2C /* TrainerAppTests.m */; };
+		BF5DE7CE1994EF3400FDBF2C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7CD1994EF3400FDBF2C /* SWRevealViewController.m */; };
+		BF5DE7D71994F22A00FDBF2C /* QuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7D61994F22A00FDBF2C /* QuestionModel.m */; };
+		BF5DE7DA1994F28700FDBF2C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7D91994F28700FDBF2C /* MenuViewController.m */; };
+		BF5DE7DD1994F2B000FDBF2C /* MenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7DC1994F2B000FDBF2C /* MenuModel.m */; };
+		BF5DE7E01994F32100FDBF2C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7DF1994F32100FDBF2C /* AboutViewController.m */; };
+		BF5DE7E31994F38400FDBF2C /* RemoveAdsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7E21994F38400FDBF2C /* RemoveAdsViewController.m */; };
+		BF5DE7E61994F3DD00FDBF2C /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7E51994F3DD00FDBF2C /* StatsViewController.m */; };
+		BF5DE7E91994F42600FDBF2C /* StatsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7E81994F42600FDBF2C /* StatsModel.m */; };
+		BF5DE7EC1994F5BF00FDBF2C /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DE7EB1994F5BF00FDBF2C /* QuestionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +53,30 @@
 		BF5DE7991994DFF500FDBF2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF5DE79A1994DFF500FDBF2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BF5DE79D1994DFF500FDBF2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BF5DE79F1994DFF500FDBF2C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BF5DE7A01994DFF500FDBF2C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BF5DE7A21994DFF500FDBF2C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF5DE7A81994DFF500FDBF2C /* TrainerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5DE7A91994DFF500FDBF2C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BF5DE7B11994DFF500FDBF2C /* TrainerAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrainerAppTests-Info.plist"; sourceTree = "<group>"; };
 		BF5DE7B31994DFF500FDBF2C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF5DE7B51994DFF500FDBF2C /* TrainerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrainerAppTests.m; sourceTree = "<group>"; };
+		BF5DE7CC1994EF3400FDBF2C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = Reveal/SWRevealViewController.h; sourceTree = "<group>"; };
+		BF5DE7CD1994EF3400FDBF2C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = Reveal/SWRevealViewController.m; sourceTree = "<group>"; };
+		BF5DE7D51994F22A00FDBF2C /* QuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionModel.h; path = Question/QuestionModel.h; sourceTree = "<group>"; };
+		BF5DE7D61994F22A00FDBF2C /* QuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionModel.m; path = Question/QuestionModel.m; sourceTree = "<group>"; };
+		BF5DE7D81994F28700FDBF2C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Menu/MenuViewController.h; sourceTree = "<group>"; };
+		BF5DE7D91994F28700FDBF2C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Menu/MenuViewController.m; sourceTree = "<group>"; };
+		BF5DE7DB1994F2B000FDBF2C /* MenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuModel.h; path = Menu/MenuModel.h; sourceTree = "<group>"; };
+		BF5DE7DC1994F2B000FDBF2C /* MenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuModel.m; path = Menu/MenuModel.m; sourceTree = "<group>"; };
+		BF5DE7DE1994F32100FDBF2C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = About/AboutViewController.h; sourceTree = "<group>"; };
+		BF5DE7DF1994F32100FDBF2C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = About/AboutViewController.m; sourceTree = "<group>"; };
+		BF5DE7E11994F38400FDBF2C /* RemoveAdsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoveAdsViewController.h; path = RemoveAds/RemoveAdsViewController.h; sourceTree = "<group>"; };
+		BF5DE7E21994F38400FDBF2C /* RemoveAdsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoveAdsViewController.m; path = RemoveAds/RemoveAdsViewController.m; sourceTree = "<group>"; };
+		BF5DE7E41994F3DD00FDBF2C /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatsViewController.h; path = Stats/StatsViewController.h; sourceTree = "<group>"; };
+		BF5DE7E51994F3DD00FDBF2C /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatsViewController.m; path = Stats/StatsViewController.m; sourceTree = "<group>"; };
+		BF5DE7E71994F42600FDBF2C /* StatsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatsModel.h; path = Stats/StatsModel.h; sourceTree = "<group>"; };
+		BF5DE7E81994F42600FDBF2C /* StatsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatsModel.m; path = Stats/StatsModel.m; sourceTree = "<group>"; };
+		BF5DE7EA1994F5BF00FDBF2C /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionViewController.h; path = Question/QuestionViewController.h; sourceTree = "<group>"; };
+		BF5DE7EB1994F5BF00FDBF2C /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionViewController.m; path = Question/QuestionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +139,13 @@
 				BF5DE7991994DFF500FDBF2C /* AppDelegate.h */,
 				BF5DE79A1994DFF500FDBF2C /* AppDelegate.m */,
 				BF5DE79C1994DFF500FDBF2C /* Main.storyboard */,
-				BF5DE79F1994DFF500FDBF2C /* ViewController.h */,
-				BF5DE7A01994DFF500FDBF2C /* ViewController.m */,
+				BF5DE7BF1994E24900FDBF2C /* Reveal */,
+				BF5DE7C01994E35400FDBF2C /* Question */,
+				BF5DE7C51994E41400FDBF2C /* Helpers */,
+				BF5DE7C41994E3E300FDBF2C /*  RemoveAds */,
+				BF5DE7C31994E3C100FDBF2C /* About */,
+				BF5DE7C21994E3B600FDBF2C /* Menu */,
+				BF5DE7C11994E39A00FDBF2C /* Stats */,
 				BF5DE7A21994DFF500FDBF2C /* Images.xcassets */,
 				BF5DE7911994DFF500FDBF2C /* Supporting Files */,
 			);
@@ -150,6 +179,73 @@
 				BF5DE7B21994DFF500FDBF2C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF5DE7BF1994E24900FDBF2C /* Reveal */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DE7CC1994EF3400FDBF2C /* SWRevealViewController.h */,
+				BF5DE7CD1994EF3400FDBF2C /* SWRevealViewController.m */,
+			);
+			name = Reveal;
+			sourceTree = "<group>";
+		};
+		BF5DE7C01994E35400FDBF2C /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DE7EA1994F5BF00FDBF2C /* QuestionViewController.h */,
+				BF5DE7EB1994F5BF00FDBF2C /* QuestionViewController.m */,
+				BF5DE7D51994F22A00FDBF2C /* QuestionModel.h */,
+				BF5DE7D61994F22A00FDBF2C /* QuestionModel.m */,
+			);
+			name = Question;
+			sourceTree = "<group>";
+		};
+		BF5DE7C11994E39A00FDBF2C /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DE7E71994F42600FDBF2C /* StatsModel.h */,
+				BF5DE7E81994F42600FDBF2C /* StatsModel.m */,
+				BF5DE7E41994F3DD00FDBF2C /* StatsViewController.h */,
+				BF5DE7E51994F3DD00FDBF2C /* StatsViewController.m */,
+			);
+			name = Stats;
+			sourceTree = "<group>";
+		};
+		BF5DE7C21994E3B600FDBF2C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DE7DB1994F2B000FDBF2C /* MenuModel.h */,
+				BF5DE7DC1994F2B000FDBF2C /* MenuModel.m */,
+				BF5DE7D81994F28700FDBF2C /* MenuViewController.h */,
+				BF5DE7D91994F28700FDBF2C /* MenuViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		BF5DE7C31994E3C100FDBF2C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DE7DE1994F32100FDBF2C /* AboutViewController.h */,
+				BF5DE7DF1994F32100FDBF2C /* AboutViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		BF5DE7C41994E3E300FDBF2C /*  RemoveAds */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DE7E11994F38400FDBF2C /* RemoveAdsViewController.h */,
+				BF5DE7E21994F38400FDBF2C /* RemoveAdsViewController.m */,
+			);
+			name = " RemoveAds";
+			sourceTree = "<group>";
+		};
+		BF5DE7C51994E41400FDBF2C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +345,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5DE7A11994DFF500FDBF2C /* ViewController.m in Sources */,
+				BF5DE7D71994F22A00FDBF2C /* QuestionModel.m in Sources */,
+				BF5DE7DD1994F2B000FDBF2C /* MenuModel.m in Sources */,
+				BF5DE7E01994F32100FDBF2C /* AboutViewController.m in Sources */,
+				BF5DE7E31994F38400FDBF2C /* RemoveAdsViewController.m in Sources */,
+				BF5DE7DA1994F28700FDBF2C /* MenuViewController.m in Sources */,
 				BF5DE79B1994DFF500FDBF2C /* AppDelegate.m in Sources */,
+				BF5DE7EC1994F5BF00FDBF2C /* QuestionViewController.m in Sources */,
+				BF5DE7E61994F3DD00FDBF2C /* StatsViewController.m in Sources */,
+				BF5DE7E91994F42600FDBF2C /* StatsModel.m in Sources */,
 				BF5DE7971994DFF500FDBF2C /* main.m in Sources */,
+				BF5DE7CE1994EF3400FDBF2C /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +560,7 @@
 				BF5DE7BB1994DFF500FDBF2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF5DE7BC1994DFF500FDBF2C /* Build configuration list for PBXNativeTarget "TrainerAppTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +569,7 @@
 				BF5DE7BE1994DFF500FDBF2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
