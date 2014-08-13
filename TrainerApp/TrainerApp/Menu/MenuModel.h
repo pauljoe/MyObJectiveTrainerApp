@@ -10,4 +10,20 @@
 
 @interface MenuModel : NSObject
 
+
+
+-(NSArray*)getMenuItems;
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end
