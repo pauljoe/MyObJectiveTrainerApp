@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "SWRevealViewController.h"
 
 @interface MenuViewController ()
 
@@ -86,28 +87,55 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    //check which item in the menu table was tapped
+    //could use the the string to identify by title but use a netter way using Prefix.pch file
+    
+    MenuItems *item = self.menuItems[indexPath.row];   //very important you let computer know what the menu item is !
+    
+    switch (item.screenType) {
+        case ScreenTypeQuestion:
+            //go to Questions Screen
+            [self performSegueWithIdentifier:@"GoToQuestionsSegue" sender:self];
+            break;
+            
+        case ScreenTypeStats:
+            //go to Stats screen
+            [self performSegueWithIdentifier:@"GoToStatsSegue" sender:self];
+            break;
+            
+        case ScreenTypeRemoveAds:
+            //go to RemoveAds
+            [self performSegueWithIdentifier:@"GoToRemoveAdsSegue" sender:self];
+            break;
+            
+        case ScreenTypeAbout:
+            //go to About screen
+            [self performSegueWithIdentifier:@"GoToAboutSegue" sender:self];
+            break;
+            
+            
+        default:
+            break;
+    }
+    
 }
-*/
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [self.revealViewController setFrontViewController:segue.destinationViewController];
+}
+
+
+
+
+
+
+
+
+
+
 
 @end
 

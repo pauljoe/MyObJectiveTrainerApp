@@ -15,13 +15,13 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.043112699216833028" blue="0.76787709448265828" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pg5-rn-jlN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-457" y="-366"/>
+            <point key="canvasLocation" x="-273" y="-348"/>
         </scene>
         <!--Remove Ads View Controller-->
         <scene sceneID="roK-j9-WSc">
@@ -34,12 +34,12 @@
                     <view key="view" contentMode="scaleToFill" id="JQW-kM-96A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97461069140000001" green="1" blue="0.18808972609999999" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwb-8H-ENx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7" y="-353"/>
+            <point key="canvasLocation" x="295" y="-348"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="CGa-I9-v2E">
@@ -94,11 +94,15 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="M7c-M2-sqJ" id="xk7-lI-ccF"/>
+                        <segue destination="7p0-fr-I5Q" kind="custom" identifier="GoToStatsSegue" customClass="SWRevealViewControllerSegue" id="7iy-bO-lH3"/>
+                        <segue destination="vXZ-lx-hvc" kind="custom" identifier="GoToQuestionsSegue" customClass="SWRevealViewControllerSegue" id="knm-8v-ymt"/>
+                        <segue destination="P9g-Z7-e0B" kind="custom" identifier="GoToRemoveAdsSegue" customClass="SWRevealViewControllerSegue" id="z13-KQ-lMN"/>
+                        <segue destination="sgd-5l-tgu" kind="custom" identifier="GoToAboutSegue" customClass="SWRevealViewControllerSegue" id="yGC-7S-CDw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRs-9r-ere" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-463" y="441"/>
+            <point key="canvasLocation" x="-359" y="441"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="yDa-1Q-aNK">
@@ -111,12 +115,12 @@
                     <view key="view" contentMode="scaleToFill" id="OKF-Ci-fy5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.51023081670000003" green="1" blue="0.37049802189999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BmH-dJ-gob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15" y="429"/>
+            <point key="canvasLocation" x="445" y="441"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="YeE-BB-e1G">
@@ -129,12 +133,12 @@
                     <view key="view" contentMode="scaleToFill" id="UQC-g5-5Aa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRY-kh-5DW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="559" y="429"/>
+            <point key="canvasLocation" x="856" y="-348"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -142,4 +146,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="knm-8v-ymt"/>
+    </inferredMetricsTieBreakers>
 </document>
