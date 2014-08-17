@@ -124,7 +124,15 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //set the front view controller to be the destionation one
+    
     [self.revealViewController setFrontViewController:segue.destinationViewController];
+    
+    
+    //slide the front view controller back into place
+    
+    [self.revealViewController revealToggleAnimated:YES];
+    
 }
 
 
