@@ -26,7 +26,18 @@ enum ScreenType {
 };
 
 
+typedef enum QuestionType {
+    QuestionTypeMC,
+    QuestionTypeBlank,
+    QuestionTypeImage
+} QuizQuestionType;
 
+
+typedef enum QuestionDifficulty {
+    QuestionDifficultyEasy,
+    QuestionDifficultyMedium,
+    QuestionDifficultyHard,
+}QuizQuestionDifficulty;
 
 
 
