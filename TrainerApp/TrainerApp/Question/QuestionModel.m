@@ -37,6 +37,7 @@
     newQuestion.questionAnswer1 = @"Answer 1";
     newQuestion.questionAnswer2 = @"Answer 2";
     newQuestion.questionAnswer3 = @"Answer 3";
+    newQuestion.correctMCQuestionIndex = 1;
     
     [self.easyQuestions addObject:newQuestion];
     

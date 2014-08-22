@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSString *questionAnswer1;
 @property (strong, nonatomic) NSString *questionAnswer2;
 @property (strong, nonatomic) NSString *questionAnswer3;
+@property (nonatomic) int correctMCQuestionIndex;
 
 
 //properties for fill in the blank

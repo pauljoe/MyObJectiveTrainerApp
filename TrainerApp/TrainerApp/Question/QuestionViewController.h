@@ -17,6 +17,7 @@
 @property (strong,nonatomic) NSArray *questions;
 
 @property (nonatomic) QuizQuestionDifficulty questionDifficulty;
+@property (strong, nonatomic) IBOutlet UIScrollView *questionScrollView;
 
 
 //properties for ui elements
