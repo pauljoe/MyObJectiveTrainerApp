@@ -38,6 +38,14 @@
     
     //add tap gesture recognizer to scroll view
     
+    
+    
+    
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    
+    
+    
     _scrollViewTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(scrollViewTapped)];
     [self.questionScrollView addGestureRecognizer:_scrollViewTapGestureRecognizer];
     
@@ -181,7 +189,7 @@
     //TODO: set Image
     self.imageQuestionImageView.backgroundColor = [UIColor greenColor];
     
-   //cretae tappable part
+   //create tappable part
     int tappable_x = self.imageQuestionImageView.frame.origin.x + _currentQuestion.offset_x - 10;
     int tappable_y = self.imageQuestionImageView.frame.origin.y + _currentQuestion.offset_x - 10;
     
@@ -298,38 +306,28 @@
 -(IBAction)questionMCAnswer:(id)sender
 {
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    //record that they answered an MC question
-    int mcQuestionsAnswered = [userDefaults integerForKey:@"MCQuestionsAnswered"];
-    mcQuestionsAnswered++;
-    [userDefaults setInteger:mcQuestionsAnswered forKey:@"MCQuestionsAnswered"];
-    
-    
+    BOOL isCorrect = NO;
     
     UIButton *selectedButton = (UIButton *)sender;
     
     if (selectedButton.tag == _currentQuestion.correctMCQuestionIndex)
     {
         //user got it right
+        isCorrect = YES;
         
         
         //TODO: display message for correct answer
-        
-        //record that they answered an mc question correctly
-        int mcQuestionsAnsweredCorrectly = [userDefaults integerForKey:@"MCQuestionsAnsweredCorrectly"];
-        mcQuestionsAnsweredCorrectly++;
-        [userDefaults setInteger:mcQuestionsAnsweredCorrectly forKey:@"MCQuestionsAnsweredCorrectly"];
-        
-        
-        
     }
     else
     {
         //user got it wrong
     }
     
-    [userDefaults synchronize];
+    
+    //save the question data
+    
+    [self saveQuestionData:_currentQuestion.questionType withDifficulty:_currentQuestion.questionDifficulty isCorrect:isCorrect];
     
     //go to next question
     [self randomizeQuestionForDisplay];
@@ -343,20 +341,12 @@
     //user got it right
     
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  
     
-    //record that they answered an image question
-    int imageQuestionsAnswered = [userDefaults integerForKey:@"ImageQuestionsAnswered"];
-    imageQuestionsAnswered++;
-    [userDefaults setInteger:imageQuestionsAnswered forKey:@"ImageQuestionsAnswered"];
     
-    //record that they answered an image question correctly
-    int imageQuestionsAnsweredCorrectly = [userDefaults integerForKey:@"ImageQuestionsAnsweredCorrectly"];
-    imageQuestionsAnsweredCorrectly++;
-    [userDefaults setInteger:imageQuestionsAnsweredCorrectly forKey:@"ImageQuestionsAnsweredCorrectly"];
     
-
-    [userDefaults synchronize];
+    
+    [self saveQuestionData:_currentQuestion.questionType withDifficulty:_currentQuestion.questionDifficulty isCorrect:YES];
     
     //go to the next question
     [self randomizeQuestionForDisplay];
@@ -368,38 +358,31 @@
     // when the user answers a fill in the blank type question
 -(IBAction)blankSubmitted:(id)sender
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    //record that they answered a blank question
-    int blankQuestionsAnswered = [userDefaults integerForKey:@"BlankQuestionsAnswered"];
-    blankQuestionsAnswered++;
-    [userDefaults setInteger:blankQuestionsAnswered forKey:@"BlankQuestionsAnswered"];
-    
-
-    
-    
-    
-    
-    
     NSString *answer = self.blankTextField.text;
+    BOOL isCorrect = NO;
+    
+    
+    
     
     if ([answer isEqualToString:_currentQuestion.correctAnswerForBlank])
     {
+        isCorrect = YES;
+        
         //user got it right
         
         
-        //record that they answered a blank question correctly
-        int blankQuestionsAnsweredCorrectly = [userDefaults integerForKey:@"BlankQuestionsAnsweredCorrectly"];
-        blankQuestionsAnsweredCorrectly++;
-        [userDefaults setInteger:blankQuestionsAnsweredCorrectly forKey:@"BlankQuestionsAnsweredCorrectly"];
-        
+        //TODO: display message for correct answer
     }
     else
     {
         //user got it wrong
     }
     
-    [userDefaults synchronize];
+   //record question Data
+    
+    [self saveQuestionData:_currentQuestion.questionType withDifficulty:_currentQuestion.questionDifficulty isCorrect:isCorrect];
+    
+    
     
     //go to tne next question
     [self randomizeQuestionForDisplay];
@@ -407,7 +390,100 @@
 }
 
 
+// save the data for use in the stats view questionType, difficulty, if correct or not
 
+-(void)saveQuestionData:(QuizQuestionType)type withDifficulty:(QuizQuestionDifficulty)difficulty isCorrect:(BOOL)correct
+{
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *keyToSaveForType = @"";
+    
+    if (type == QuestionTypeBlank)
+    {
+       keyToSaveForType = @"Blank";
+        
+    }
+    else if (type == QuestionTypeMC)
+    {
+       
+      keyToSaveForType = @"MC";
+    }
+    
+    else if (type == QuestionTypeImage)
+    {
+      keyToSaveForType = @"Image";
+        
+    }
+
+
+        //record that they answered a question of type
+    int questionsAnsweredByType = [userDefaults integerForKey:[NSString stringWithFormat:@"%@QuestionsAnswered",keyToSaveForType]];
+    questionsAnsweredByType++;
+    [userDefaults setInteger:questionsAnsweredByType forKey:[NSString stringWithFormat:@"%@QuestionsAnswered",keyToSaveForType]];
+
+
+
+        //record that they answered a question of type correctly
+    int questionsAnsweredCorrectlyByType = [userDefaults integerForKey:[NSString stringWithFormat:@"%@QuestionsAnsweredCorrectly",keyToSaveForType]];
+    questionsAnsweredCorrectlyByType++;
+    [userDefaults setInteger:questionsAnsweredCorrectlyByType forKey:[NSString stringWithFormat:@"%@QuestionsAnsweredCorrectly",keyToSaveForType]];
+
+
+
+
+
+
+    //now we record the number of questions answered as per Question difficulty
+    
+    
+    NSString *keyToSaveForDifficulty = @"";
+    
+    if (difficulty == QuestionDifficultyEasy)
+    {
+        keyToSaveForDifficulty = @"Easy";
+        
+    }
+    
+    else if (difficulty == QuestionDifficultyMedium)
+    {
+        keyToSaveForDifficulty = @"Medium";
+    }
+    
+    else if (difficulty == QuestionDifficultyHard)
+    {
+        keyToSaveForDifficulty = @"Hard";
+    }
+    
+    
+    //record the questions answered by difficulty
+    
+    int questionAnsweredWithDifficulty = [userDefaults integerForKey:[NSString stringWithFormat:@"%@QuestionsAnswered",keyToSaveForDifficulty]];
+    questionAnsweredWithDifficulty++;
+    [userDefaults setInteger:questionAnsweredWithDifficulty forKey:[NSString stringWithFormat:@"%@QuestionsAnswered",keyToSaveForDifficulty]];
+    
+    //record the questions answered correctly by difficulty
+    
+    if (correct)  
+    {
+        int questionAnsweredCorrectlyWithDifficulty = [userDefaults integerForKey:[NSString stringWithFormat:@"%@QuestionAnsweredCorrectly",keyToSaveForDifficulty]];
+        questionAnsweredCorrectlyWithDifficulty++;
+        [userDefaults setInteger:questionAnsweredCorrectlyWithDifficulty forKey:[NSString stringWithFormat:@"%@QuestionAnsweredCorrectly",keyToSaveForDifficulty]];
+    }
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    [userDefaults synchronize];
+}
 
 
 
