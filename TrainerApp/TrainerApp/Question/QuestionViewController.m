@@ -186,8 +186,20 @@
     //set question elements
     
     
-    //TODO: set Image
-    self.imageQuestionImageView.backgroundColor = [UIColor greenColor];
+    // set Image and resize Image view
+    
+    UIImage *tempImage = [UIImage imageNamed:_currentQuestion.questionImageName];
+
+    self.imageQuestionImageView.image = tempImage;
+    
+    CGRect imageViewFrame = self.imageQuestionImageView.frame;
+    imageViewFrame.size.height = tempImage.size.height;
+    imageViewFrame.size.width = tempImage.size.width;
+    
+    
+    
+    
+    
     
    //create tappable part
     int tappable_x = self.imageQuestionImageView.frame.origin.x + _currentQuestion.offset_x - 10;
@@ -218,12 +230,25 @@
 
 -(void)displayBlankQuestion
 {
+    
+    
+    //hide all view elements
+    
     [self hideAllQuestionElements];
     
     
-    //set the question elements
+    //set the question image view for fill in the blanl question
     
-    self.questionText.text = _currentQuestion.questionText;
+    UIImage *tempImage = [UIImage imageNamed:_currentQuestion.questionImageName];
+    
+    self.imageQuestionImageView.image = tempImage;
+    
+    CGRect imageViewFrame = self.imageQuestionImageView.frame;
+    imageViewFrame.size.height = tempImage.size.height;
+    imageViewFrame.size.width = tempImage.size.width;
+    
+    
+
     
     
     
@@ -240,7 +265,7 @@
     
     //reveal the question elements
     
-    self.questionText.hidden = NO;
+    self.imageQuestionImageView.hidden = NO;
     self.submitAnswerForBlankButton.hidden = NO;
     self.blankTextField.hidden = NO;
     self.instructionLabelForBlank.hidden = NO;
@@ -358,12 +383,19 @@
     // when the user answers a fill in the blank type question
 -(IBAction)blankSubmitted:(id)sender
 {
+    //retract keyboard
+    
+    [self.blankTextField resignFirstResponder];
+    
+    
+    
+    // Get answer
     NSString *answer = self.blankTextField.text;
     BOOL isCorrect = NO;
     
     
     
-    
+    //check if answer is right
     if ([answer isEqualToString:_currentQuestion.correctAnswerForBlank])
     {
         isCorrect = YES;

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF414170199B7FAF002273ED /* MenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = BF41416F199B7FAF002273ED /* MenuItems.m */; };
+		BF54FC5D19B0994A00817ED4 /* TrainerAppQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = BF54FC5C19B0994A00817ED4 /* TrainerAppQuestions.json */; };
 		BF5DE78B1994DFF500FDBF2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DE78A1994DFF500FDBF2C /* Foundation.framework */; };
 		BF5DE78D1994DFF500FDBF2C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DE78C1994DFF500FDBF2C /* CoreGraphics.framework */; };
 		BF5DE78F1994DFF500FDBF2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DE78E1994DFF500FDBF2C /* UIKit.framework */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		BF41416E199B7FAF002273ED /* MenuItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItems.h; sourceTree = "<group>"; };
 		BF41416F199B7FAF002273ED /* MenuItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItems.m; sourceTree = "<group>"; };
+		BF54FC5C19B0994A00817ED4 /* TrainerAppQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TrainerAppQuestions.json; sourceTree = "<group>"; };
 		BF5DE7871994DFF500FDBF2C /* TrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5DE78A1994DFF500FDBF2C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF5DE78C1994DFF500FDBF2C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +163,7 @@
 		BF5DE7911994DFF500FDBF2C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF54FC5C19B0994A00817ED4 /* TrainerAppQuestions.json */,
 				BF5DE7921994DFF500FDBF2C /* TrainerApp-Info.plist */,
 				BF5DE7931994DFF500FDBF2C /* InfoPlist.strings */,
 				BF5DE7961994DFF500FDBF2C /* main.m */,
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5DE7A31994DFF500FDBF2C /* Images.xcassets in Resources */,
+				BF54FC5D19B0994A00817ED4 /* TrainerAppQuestions.json in Resources */,
 				BF5DE7951994DFF500FDBF2C /* InfoPlist.strings in Resources */,
 				BF5DE79E1994DFF500FDBF2C /* Main.storyboard in Resources */,
 			);
