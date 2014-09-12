@@ -15,6 +15,9 @@
     UIView *_tappablePortionOfTheImageQuestion;
     UITapGestureRecognizer *_tapRecognizer;
     UITapGestureRecognizer *_scrollViewTapGestureRecognizer;
+    
+    ResultView *_resultView;
+    UIView *_dimmedBackground;
 }
 
 
@@ -38,24 +41,12 @@
     
     //add tap gesture recognizer to scroll view
     
-    
-    
-    
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
     
     
     
     _scrollViewTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(scrollViewTapped)];
     [self.questionScrollView addGestureRecognizer:_scrollViewTapGestureRecognizer];
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     //hide all the question elements
@@ -85,6 +76,39 @@
     
 }
 
+
+
+
+
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    //here you are creating a result view but it is not visible yet because it's only whrn a user answers a question that you want it visible
+    
+    //call super implementation
+    
+    [super viewDidAppear:animated];
+    
+    //create a result view
+    _resultView = [[ResultView alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width - 20, self.view.frame.size.height - 20)];
+    _resultView.delegate = self;
+    
+    _dimmedBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    _dimmedBackground.backgroundColor = [UIColor blackColor];
+    _dimmedBackground.alpha = 0.7;
+    
+    
+}
+
+
+
+
+
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -105,6 +129,14 @@
 
 //this is a helper method to hide the ui elements in the view
 
+
+
+
+
+
+
+
+
 -(void) hideAllQuestionElements
 {
     self.questionText.hidden = YES;
@@ -124,6 +156,13 @@
     }
     
 }
+
+
+
+
+
+
+
 
 
 #pragma mark Question methods
@@ -330,11 +369,29 @@
 
 -(IBAction)questionMCAnswer:(id)sender
 {
-    
+    UIButton *selectedButton = (UIButton *)sender;
     
     BOOL isCorrect = NO;
     
-    UIButton *selectedButton = (UIButton *)sender;
+    
+    
+    NSString *userAnswer = @"";
+    switch (selectedButton.tag) {
+        case 1:
+            userAnswer = _currentQuestion.questionAnswer1;
+            break;
+        case 2:
+            userAnswer = _currentQuestion.questionAnswer2;
+            break;
+        case 3:
+            userAnswer = _currentQuestion.questionAnswer3;
+            break;
+            
+            
+        default:
+            break;
+    }
+    
     
     if (selectedButton.tag == _currentQuestion.correctMCQuestionIndex)
     {
@@ -342,12 +399,19 @@
         isCorrect = YES;
         
         
-        //TODO: display message for correct answer
     }
     else
     {
         //user got it wrong
     }
+    
+    // display message for correct answer
+    
+    [_resultView showResultForTextQuestion:isCorrect forUserAnswer:userAnswer forQuestion:_currentQuestion];
+    [self.view addSubview:_dimmedBackground];
+
+    [self.view addSubview:_resultView];
+
     
     
     //save the question data
@@ -366,6 +430,11 @@
     //user got it right
     
     
+    //display message for correct answer
+    [_resultView showresultForImageQuestion:YES forQuestion:_currentQuestion];
+    [self.view addSubview:_dimmedBackground];
+
+    [self.view addSubview:_resultView];
   
     
     
@@ -402,13 +471,25 @@
         
         //user got it right
         
-        
-        //TODO: display message for correct answer
     }
     else
     {
         //user got it wrong
     }
+    
+    
+    
+    //clear the text field
+    self.blankTextField.text = @"";
+    
+    
+    
+    //display message for answer
+
+    [_resultView showresultForImageQuestion:YES forQuestion:_currentQuestion];
+    [self.view addSubview:_dimmedBackground];
+
+    [self.view addSubview:_resultView];
     
    //record question Data
     
@@ -524,6 +605,28 @@
 {
     [self.blankTextField resignFirstResponder];
 }
+
+
+
+#pragma mark Result View Delegate Methods
+
+-(void)resultViewDismissed
+{
+    [_dimmedBackground removeFromSuperview];
+    [_resultView removeFromSuperview];
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "QuestionModel.h"
 #import "QuestionClass.h"
+#import "ResultView.h"
 
-@interface QuestionViewController : UIViewController
+@interface QuestionViewController : UIViewController<ResultViewProtocol>
 
 
 @property (strong,nonatomic) QuestionModel *model;
